@@ -13,4 +13,4 @@ function drawGrid(gridSize){
 
 
 
-drawGrid(16);
+drawGrid(20);

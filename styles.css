@@ -5,3 +5,20 @@
     margin: 1px;
     padding: 2px;
 }
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+#gridBox{
+    width: 100vh;
+    height: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#gridCell{
+    width: 20vh;
+}
