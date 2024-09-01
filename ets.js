@@ -1,14 +1,5 @@
 const gridBox = document.querySelector('#gridBox');
-const divGridCell = document.querySelector('#gridCell');
 
-divGridCell.forEach((cell) => {
-    cell.addEventListener('click', () => {
-        let textValue = cell.textContent;
-        console.log(`${textValue} was clicked`);
-
-    });
-
-});
 
 function drawGrid(gridSize){
 
@@ -20,8 +11,16 @@ function drawGrid(gridSize){
     }
 }
 
-
-
-
-
 drawGrid(20);
+
+const gridCell = document.querySelectorAll('#gridCell');
+
+
+gridCell.forEach((cell)=>{
+
+    cell.addEventListener('click', ()=>{
+        console.log(`${cell.textContent}`);
+
+    });
+
+});
