@@ -18,8 +18,13 @@ const gridCell = document.querySelectorAll('#gridCell');
 
 gridCell.forEach((cell)=>{
 
-    cell.addEventListener('click', ()=>{
-        console.log(`${cell.textContent}`);
+    cell.addEventListener('mouseenter', ()=>{
+        console.log(`Enter ${cell.textContent}`);
+
+    });
+
+    cell.addEventListener('mouseleave', ()=>{
+        console.log(`Leave ${cell.textContent}`);
 
     });
 
