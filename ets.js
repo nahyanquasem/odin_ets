@@ -1,5 +1,4 @@
 const gridBox = document.querySelector('#gridBox');
-const cellID = document.querySelector('#cellID');
 
 
 function drawGrid(gridSize){
@@ -21,7 +20,6 @@ gridCell.forEach((cell)=>{
 
     cell.addEventListener('mouseenter', ()=>{
         console.log(`Enter ${cell.textContent}`);
-        cellID.textContent = `${cell.textContent}`;
 
     });
 
