@@ -29,9 +29,9 @@ function changeBackgroundColorRandomly(cell){
     let colors = randomColorGenerator();
 
     let text = `RED: ${colors[0]} GREEN: ${colors[1]} BLUE: ${colors[2]}`;
-    // colorValuesPage.textContent = text;
-
     cell.style.cssText = `background-color:rgb(${colors[0]} ${colors[1]} ${colors[2]})`;
+
+    return text;
 
 }
 
@@ -43,14 +43,19 @@ const gridCell = document.querySelectorAll('#gridCell');
 gridCell.forEach((cell)=>{
 
     cell.addEventListener('mouseenter', ()=>{
-        changeBackgroundColorRandomly(cell);
-        console.log(`Enter ${cell.textContent}`);
+        let colorText = changeBackgroundColorRandomly(cell);
+        console.log(`Enter ${cell.textContent} Color Value: ${colorText}`);
 
     });
 
     cell.addEventListener('mouseleave', ()=>{
-        changeBackgroundColorRandomly(cell);
-        console.log(`Leave ${cell.textContent}`);
+        let colorText = changeBackgroundColorRandomly(cell);
+        console.log(`Leave ${cell.textContent} Color Value: ${colorText}`);
+
+    });
+
+    cell.addEventListener('click', ()=>{
+        cell.style.cssText = 'background-color:rgb(255 255 255))';
 
     });
 
