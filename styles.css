@@ -12,13 +12,15 @@ body{
 }
 
 #gridBox{
-    width: 100vh;
-    height: 900px;
+    width: 95vh;
+    /* height: 900px; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 #gridCell{
-    width: 20vh;
+    width: 5vh;
+    height: 5vh;
 }
+
