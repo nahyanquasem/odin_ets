@@ -1,5 +1,15 @@
+const gridCell = document.querySelectorAll('#gridCell');
+
 const gridBox = document.querySelector('#gridBox');
+
+function resetGrid(){
+    while(gridBox.firstChild){
+        gridBox.removeChild(gridBox.lastChild);
+    }
+}
 function drawGrid(gridSize){
+    
+    resetGrid();
     
     for (let i = 0; i<gridSize*gridSize; i++){
         const newDiv = document.createElement('div');
@@ -7,6 +17,35 @@ function drawGrid(gridSize){
         newDiv.textContent = `${i}`;
         gridBox.append(newDiv);
     }
+    
+    addGridCellEvents();
+}
+
+const gridSizeButton = document.querySelector('#gridSizeButton');
+gridSizeButton.addEventListener('click',()=>{
+    let text = document.querySelector('#gridSizeTextBox').value;
+    let gridSize = Number(text);
+    drawGrid(gridSize);
+});
+
+drawGrid(16);
+
+function addGridCellEvents(){
+
+    gridCell.forEach((cell)=>{
+    
+        cell.addEventListener('mouseenter', ()=>{
+            let colorText = changeBackgroundColorRandomly(cell);
+            console.log(`Enter ${cell.textContent} Color Value: ${colorText}`);
+    
+        });
+    
+        cell.addEventListener('mouseleave', ()=>{
+            let colorText = changeBackgroundColorRandomly(cell);
+            console.log(`Leave ${cell.textContent} Color Value: ${colorText}`);
+    
+        });
+    });
 }
 
 function randomColorGenerator(){
@@ -33,7 +72,6 @@ function changeBackgroundColorRandomly(cell){
     
 }
 
-drawGrid(8);
 
 
 const resetButton = document.querySelector('#reset');
@@ -48,18 +86,4 @@ resetButton.addEventListener('click', ()=>{
 });
 
 
-const gridCell = document.querySelectorAll('#gridCell');
-gridCell.forEach((cell)=>{
 
-    cell.addEventListener('mouseenter', ()=>{
-        let colorText = changeBackgroundColorRandomly(cell);
-        console.log(`Enter ${cell.textContent} Color Value: ${colorText}`);
-
-    });
-
-    cell.addEventListener('mouseleave', ()=>{
-        let colorText = changeBackgroundColorRandomly(cell);
-        console.log(`Leave ${cell.textContent} Color Value: ${colorText}`);
-
-    });
-});
