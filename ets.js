@@ -1,12 +1,22 @@
-const gridCell = document.querySelectorAll('#gridCell');
-
 const gridBox = document.querySelector('#gridBox');
+// const gridCell = document.querySelectorAll('#gridCell');
+
+const gridSizeButton = document.querySelector('#gridSizeButton');
+const resetButton = document.querySelector('#reset');
+
+
+gridSizeButton.addEventListener('click',()=>{
+    let text = document.querySelector('#gridSizeTextBox').value;
+    let gridSize = Number(text);
+    drawGrid(gridSize);
+});
 
 function resetGrid(){
     while(gridBox.firstChild){
         gridBox.removeChild(gridBox.lastChild);
     }
 }
+
 function drawGrid(gridSize){
     
     resetGrid();
@@ -16,23 +26,16 @@ function drawGrid(gridSize){
         newDiv.id = 'gridCell';
         newDiv.textContent = `${i}`;
         gridBox.append(newDiv);
+        let gridCell = document.querySelector('#gridCell');
+        addGridCellEvents(gridCell);
     }
     
-    addGridCellEvents();
 }
 
-const gridSizeButton = document.querySelector('#gridSizeButton');
-gridSizeButton.addEventListener('click',()=>{
-    let text = document.querySelector('#gridSizeTextBox').value;
-    let gridSize = Number(text);
-    drawGrid(gridSize);
-});
 
-drawGrid(16);
+// drawGrid(16);
 
-function addGridCellEvents(){
-
-    gridCell.forEach((cell)=>{
+function addGridCellEvents(cell){
     
         cell.addEventListener('mouseenter', ()=>{
             let colorText = changeBackgroundColorRandomly(cell);
@@ -45,7 +48,6 @@ function addGridCellEvents(){
             console.log(`Leave ${cell.textContent} Color Value: ${colorText}`);
     
         });
-    });
 }
 
 function randomColorGenerator(){
@@ -74,7 +76,6 @@ function changeBackgroundColorRandomly(cell){
 
 
 
-const resetButton = document.querySelector('#reset');
 resetButton.addEventListener('click', ()=>{
     
     gridCell.forEach((cell) => {
