@@ -36,7 +36,7 @@ function changeBackgroundColorRandomly(cell){
 
 }
 
-drawGrid(16);
+drawGrid(8);
 
 const gridCell = document.querySelectorAll('#gridCell');
 
@@ -64,10 +64,4 @@ gridCell.forEach((cell)=>{
         console.log(`Leave ${cell.textContent} Color Value: ${colorText}`);
 
     });
-
-    cell.addEventListener('click', ()=>{
-        cell.style.cssText = 'background-color:rgb(255 255 255))';
-
-    });
-
 });
