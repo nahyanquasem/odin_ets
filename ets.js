@@ -1,4 +1,5 @@
 const gridBox = document.querySelector('#gridBox');
+const body = document.querySelector('body');
 
 
 function drawGrid(gridSize){
@@ -38,6 +39,16 @@ function changeBackgroundColorRandomly(cell){
 drawGrid(16);
 
 const gridCell = document.querySelectorAll('#gridCell');
+
+body.addEventListener('click', ()=>{
+
+    gridCell.forEach((cell) => {
+
+        cell.style.cssText = 'background-color:rgb(255 255 255)';
+
+    });
+
+});
 
 
 gridCell.forEach((cell)=>{
