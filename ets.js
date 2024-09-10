@@ -1,5 +1,4 @@
 const gridBox = document.querySelector('#gridBox');
-// const gridCell = document.querySelectorAll('#gridCell');
 
 const gridSizeButton = document.querySelector('#gridSizeButton');
 const resetButton = document.querySelector('#reset');
@@ -31,9 +30,6 @@ function drawGrid(gridSize){
     }
     
 }
-
-
-// drawGrid(16);
 
 function addGridCellEvents(cell){
     
@@ -77,12 +73,13 @@ function changeBackgroundColorRandomly(cell){
 
 
 resetButton.addEventListener('click', ()=>{
-    
-    gridCell.forEach((cell) => {
-        
+
+    gridBox.childNodes.forEach((cell) =>{
+
         cell.style.cssText = 'background-color:rgb(255 255 255)';
-        
+
     });
+    
     
 });
 
