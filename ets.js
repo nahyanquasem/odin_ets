@@ -22,11 +22,11 @@ function drawGrid(gridSize){
     resetGrid();
     
     for (let i = 0; i<gridSize*gridSize; i++){
-        const newDiv = document.createElement('div');
-        newDiv.id = 'gridCell';
+        let newDiv = document.createElement('div');
+        newDiv.id = `gridCell_${i}`;
         newDiv.textContent = `${i}`;
         gridBox.append(newDiv);
-        let gridCell = document.querySelector('#gridCell');
+        let gridCell = document.querySelector(`#gridCell_${i}`);
         addGridCellEvents(gridCell);
     }
     
