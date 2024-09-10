@@ -22,28 +22,38 @@ function drawGrid(gridSize){
     
     for (let i = 0; i<gridSize*gridSize; i++){
         let newDiv = document.createElement('div');
-        newDiv.id = `gridCell_${i}`;
+        newDiv.id = `gridCell`;
         newDiv.textContent = `${i}`;
         gridBox.append(newDiv);
-        let gridCell = document.querySelector(`#gridCell_${i}`);
-        addGridCellEvents(gridCell);
     }
     
+    addGridCellEvents();
 }
 
-function addGridCellEvents(cell){
-    
+
+function addGridCellEvents(){
+
+    gridBox.childNodes.forEach((cell) => {
+
         cell.addEventListener('mouseenter', ()=>{
             let colorText = changeBackgroundColorRandomly(cell);
             console.log(`Enter ${cell.textContent} Color Value: ${colorText}`);
     
         });
-    
+
+    });
+
+    gridBox.childNodes.forEach((cell) => {
+
         cell.addEventListener('mouseleave', ()=>{
             let colorText = changeBackgroundColorRandomly(cell);
             console.log(`Leave ${cell.textContent} Color Value: ${colorText}`);
     
         });
+
+    });
+    
+    
 }
 
 function randomColorGenerator(){
