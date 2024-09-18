@@ -27,11 +27,11 @@ function drawGrid(gridSize){
         gridBox.append(newDiv);
     }
     
-    addGridCellEvents();
+    addRandomColorEvents();
 }
 
 
-function addGridCellEvents(){
+function addRandomColorEvents(){
 
     gridBox.childNodes.forEach((cell) => {
 
@@ -52,7 +52,29 @@ function addGridCellEvents(){
         });
 
     });
+}
+
+function addMonoChromeEvents(){
+
+    gridBox.childNodes.forEach((cell) => {
+
+        cell.addEventListener('mouseenter', ()=>{
+            // let colorText = changeBackgroundColorRandomly(cell);
+            console.log(`Enter ${cell.textContent} Color Value: ${colorText}`);
     
+        });
+
+    });
+
+    gridBox.childNodes.forEach((cell) => {
+
+        cell.addEventListener('mouseleave', ()=>{
+            // let colorText = changeBackgroundColorRandomly(cell);
+            console.log(`Leave ${cell.textContent} Color Value: ${colorText}`);
+    
+        });
+
+    });
     
 }
 
