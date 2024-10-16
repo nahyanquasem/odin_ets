@@ -84,7 +84,11 @@ function changeBackgroundColorRandomly(event){
     let text = `RED: ${colors[0]} GREEN: ${colors[1]} BLUE: ${colors[2]}`;
 
     cell.style.cssText = `background-color:rgb(${colors[0]} ${colors[1]} ${colors[2]})`;
-    console.log(`Enter ${cell.textContent} Color Value: ${text}`);
+    
+    if (event.type === 'mouseenter'){console.log(`Enter ${cell.textContent} Color Value: ${text}`);}
+    else if (event.type === 'mouseleave'){console.log(`Leave ${cell.textContent} Color Value: ${text}`);}
+    
+    
     
 }
 
@@ -97,7 +101,9 @@ function changeBackgroundColorMonochrome(event){
     let text = `RED: ${colors[0]} GREEN: ${colors[1]} BLUE: ${colors[2]}`;
 
     cell.style.cssText = `background-color:rgb(${colors[0]} ${colors[1]} ${colors[2]})`;
-    console.log(`Enter ${cell.textContent} Color Value: ${text}`);
+
+    if (event.type === 'mouseenter'){console.log(`Enter ${cell.textContent} Color Value: ${text}`);}
+    else if (event.type === 'mouseleave'){console.log(`Leave ${cell.textContent} Color Value: ${text}`);}
 
 }
 
