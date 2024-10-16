@@ -30,7 +30,6 @@ function drawGrid(gridSize){
         gridBox.append(newDiv);
     }
     
-    addRandomColorEvents();
 }
 
 function removeAllEventListeners(){
@@ -104,12 +103,18 @@ function changeBackgroundColorMonochrome(event){
 
 radioSelectionMonochrome.addEventListener('click', () =>{
 
+    
+    removeAllEventListeners();
+    addMonoChromeEvents();
     console.log('The Monochrome radio button has been clicked');
 
 });
 
 radioSelectionRandom.addEventListener('click', ()=>{
 
+    
+    removeAllEventListeners();
+    addRandomColorEvents();
     console.log('The Random radio button has been clicked');
 
 });
