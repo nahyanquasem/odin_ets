@@ -3,6 +3,9 @@ const gridBox = document.querySelector('#gridBox');
 const gridSizeButton = document.querySelector('#gridSizeButton');
 const resetButton = document.querySelector('#reset');
 
+const radioSelectionRandom = document.querySelector('#random');
+const radioSelectionMonochrome = document.querySelector('#monochrome');
+
 
 gridSizeButton.addEventListener('click',()=>{
     let text = document.querySelector('#gridSizeTextBox').value;
@@ -101,6 +104,18 @@ function changeBackgroundColorRandomly(cell){
     return text;
     
 }
+
+radioSelectionMonochrome.addEventListener('click', () =>{
+
+    console.log('The Monochrome radio button has been clicked');
+
+});
+
+radioSelectionRandom.addEventListener('click', ()=>{
+
+    console.log('The Random radio button has been clicked')
+
+});
 
 
 
