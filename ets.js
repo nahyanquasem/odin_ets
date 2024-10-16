@@ -112,7 +112,6 @@ radioSelectionMonochrome.addEventListener('click', () =>{
 
 radioSelectionRandom.addEventListener('click', ()=>{
 
-    
     removeAllEventListeners();
     addRandomColorEvents();
     console.log('The Random radio button has been clicked');
@@ -122,6 +121,8 @@ radioSelectionRandom.addEventListener('click', ()=>{
 
 
 resetButton.addEventListener('click', ()=>{
+
+    console.log('The reset button has been clicked');
 
     gridBox.childNodes.forEach((cell) =>{
 
