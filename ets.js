@@ -33,26 +33,39 @@ function drawGrid(gridSize){
     addRandomColorEvents();
 }
 
+function removeAllEventListeners(){
+    
+    gridBox.childNodes.forEach((cell) => {
+
+        cell.removeEventListener('mouseenter', );
+        cell.removeEventListener('mouseleave', );
+
+    });
+}
 
 function addRandomColorEvents(){
 
     gridBox.childNodes.forEach((cell) => {
 
-        cell.addEventListener('mouseenter', ()=>{
-            let colorText = changeBackgroundColorRandomly(cell);
-            console.log(`Enter ${cell.textContent} Color Value: ${colorText}`);
+        // cell.addEventListener('mouseenter', ()=>{
+        //     let colorText = changeBackgroundColorRandomly(cell);
+        //     console.log(`Enter ${cell.textContent} Color Value: ${colorText}`);
     
-        });
+        // });
+
+        cell.addEventListener('mouseenter', changeBackgroundColorRandomly);
 
     });
 
     gridBox.childNodes.forEach((cell) => {
 
-        cell.addEventListener('mouseleave', ()=>{
-            let colorText = changeBackgroundColorRandomly(cell);
-            console.log(`Leave ${cell.textContent} Color Value: ${colorText}`);
+        // cell.addEventListener('mouseleave', ()=>{
+        //     let colorText = changeBackgroundColorRandomly(cell);
+        //     console.log(`Leave ${cell.textContent} Color Value: ${colorText}`);
     
-        });
+        // });
+
+        cell.addEventListener('mouseleave', changeBackgroundColorRandomly)
 
     });
 }
@@ -95,13 +108,14 @@ function randomColorGenerator(){
     
 }
 
-function changeBackgroundColorRandomly(cell){
+function changeBackgroundColorRandomly(event){
     let colors = randomColorGenerator();
+
+    let cell = event.target;
     
     let text = `RED: ${colors[0]} GREEN: ${colors[1]} BLUE: ${colors[2]}`;
     cell.style.cssText = `background-color:rgb(${colors[0]} ${colors[1]} ${colors[2]})`;
-    
-    return text;
+    console.log(`Enter ${cell.textContent} Color Value: ${text}`);
     
 }
 
@@ -113,13 +127,15 @@ radioSelectionMonochrome.addEventListener('click', () =>{
 
 radioSelectionRandom.addEventListener('click', ()=>{
 
-    console.log('The Random radio button has been clicked')
+    console.log('The Random radio button has been clicked');
 
 });
 
 
 
 resetButton.addEventListener('click', ()=>{
+
+    removeAllEventListeners();
 
     gridBox.childNodes.forEach((cell) =>{
 
