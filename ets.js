@@ -102,7 +102,6 @@ function changeBackgroundColorMonochrome(event){
 }
 
 radioSelectionMonochrome.addEventListener('click', () =>{
-
     
     removeAllEventListeners();
     addMonoChromeEvents();
@@ -119,7 +118,6 @@ radioSelectionRandom.addEventListener('click', ()=>{
 });
 
 
-
 resetButton.addEventListener('click', ()=>{
 
     console.log('The reset button has been clicked');
@@ -130,8 +128,5 @@ resetButton.addEventListener('click', ()=>{
 
     });
     
-    
 });
-
-
 
